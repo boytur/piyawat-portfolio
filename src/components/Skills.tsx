@@ -1,7 +1,7 @@
 
 function Skills() {
   return (
-    <div>Skills</div>
+    <section id="skills" className="h-[100vh] border">Skills</section>
   )
 }
 
