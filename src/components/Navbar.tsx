@@ -5,6 +5,7 @@ import { MdOutlinePermContactCalendar } from "react-icons/md";
 import { FaBarsStaggered, FaCode } from "react-icons/fa6";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion"
+import { GoHome } from "react-icons/go";
 
 function Navbar() {
   // set mobile navbar
@@ -22,10 +23,10 @@ function Navbar() {
   
   return (
 
-    <div className=" flex justify-center" >
+    <div className=" flex justify-center z-50" >
 
       {/* Desktop navbar */}
-      <nav className="w-full h-[5rem] md:flex pt-5 px-2 hidden border fixed justify-center">
+      <nav className="w-full h-[5rem] md:flex pt-5 px-2 hidden fixed justify-center">
         <div className=" w-full flex max-w-screen-xl">
           <div className=" w-full h-10 text-white">
             <div
@@ -43,6 +44,15 @@ function Navbar() {
           </div>
           <div className="w-full h-10 text-white md:flex justify-center">
             <ul className="w-full flex justify-between items-center">
+            <Link
+                to="home"
+                smooth={true}
+                duration={500}
+                className="flex items-center gap-1 cursor-pointer"
+              >
+                <GoHome />
+                Home
+              </Link>
               <Link
                 to="about"
                 smooth={true}
@@ -86,7 +96,7 @@ function Navbar() {
 
       {/* Mobile navbar */}
       <nav
-      className={`w-full border h-[100vh] md:hidden fixed ${toggleMobileNavbar ? "bg-[#1E1E1E]" : ""}`}>
+      className={`w-full h-[100vh] md:hidden fixed z-50 ${toggleMobileNavbar ? "bg-[#1E1E1E]" : ""}`}>
         <div className="flex px-3 pt-5">
           <div className=" w-full h-10 text-white">
             <div
@@ -109,6 +119,16 @@ function Navbar() {
            variants={variants}
            className={`w-full h-full text-white md:hidden justify-center ${toggleMobileNavbar ? "flex" : "hidden"}`}>
             <ul className="w-full flex justify-between items-center flex-col gap-5 pt-5 pb-5">
+            <Link
+                onClick={() => setToggleMobileNavbar(!toggleMobileNavbar)}
+                to="home"
+                smooth={true}
+                duration={500}
+                className="flex items-center gap-1 cursor-pointer"
+              >
+                <GoHome />
+                Home
+              </Link>
               <Link
                 onClick={() => setToggleMobileNavbar(!toggleMobileNavbar)}
                 to="about"
