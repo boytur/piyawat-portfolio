@@ -4,18 +4,27 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 import { FaBarsStaggered, FaCode } from "react-icons/fa6";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { motion } from "framer-motion"
 
 function Navbar() {
-
+  // set mobile navbar
   const [toggleMobileNavbar, setToggleMobileNavbar] = useState<boolean>(false);
 
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
-
+  
+  //framer motion scroll navbar variants 
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, y: "-100%" },
+  }
+  
   return (
 
     <div className=" flex justify-center" >
+
+      {/* Desktop navbar */}
       <nav className="w-full h-[5rem] md:flex pt-5 px-2 hidden border fixed justify-center">
         <div className=" w-full flex max-w-screen-xl">
           <div className=" w-full h-10 text-white">
@@ -74,8 +83,10 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      {/* Mobile */}
-      <nav className={`w-full border h-[100vh] md:hidden fixed ${toggleMobileNavbar ? "bg-[#1E1E1E]" : ""}`}>
+
+      {/* Mobile navbar */}
+      <nav
+      className={`w-full border h-[100vh] md:hidden fixed ${toggleMobileNavbar ? "bg-[#1E1E1E]" : ""}`}>
         <div className="flex px-3 pt-5">
           <div className=" w-full h-10 text-white">
             <div
@@ -93,7 +104,10 @@ function Navbar() {
           </div>
         </div>
         <div>
-          <div className={`w-full h-full text-white md:hidden justify-center border ${toggleMobileNavbar ? "flex" : "hidden"}`}>
+          <motion.div
+           animate={toggleMobileNavbar ? "open" : "closed"}
+           variants={variants}
+           className={`w-full h-full text-white md:hidden justify-center ${toggleMobileNavbar ? "flex" : "hidden"}`}>
             <ul className="w-full flex justify-between items-center flex-col gap-5 pt-5 pb-5">
               <Link
                 onClick={() => setToggleMobileNavbar(!toggleMobileNavbar)}
@@ -136,7 +150,7 @@ function Navbar() {
                 Contact
               </Link>
             </ul>
-          </div>
+          </motion.div>
         </div>
       </nav>
     </div>
