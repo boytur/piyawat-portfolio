@@ -32,7 +32,7 @@ function Home() {
               <Link
                 smooth={true}
                 duration={500}
-                to="about" className='lg:w-2/4 mx-2 lg:mx-0 border h-[60px] rounded-sm text-white flex justify-center items-center cursor-pointer hover:scale-105'>
+                to="about" className='lg:w-2/4 mx-2 lg:mx-0 border h-[60px] rounded-sm text-white flex justify-center items-center cursor-pointer md:hover:scale-105'>
                 <div><p>View more</p></div>
                 <div>
                   <IoIosArrowRoundDown size={35} />

@@ -96,7 +96,7 @@ function Navbar() {
 
       {/* Mobile navbar */}
       <nav
-      className={`w-full h-[100vh] md:hidden fixed z-50 ${toggleMobileNavbar ? "bg-[#1E1E1E]" : ""}`}>
+      className={`w-full md:hidden fixed ${toggleMobileNavbar ? "bg-[#1E1E1E] h-full" : ""}`}>
         <div className="flex px-3 pt-5">
           <div className=" w-full h-10 text-white">
             <div
@@ -109,7 +109,7 @@ function Navbar() {
               </span>
             </div>
           </div>
-          <div onClick={() => setToggleMobileNavbar(!toggleMobileNavbar)} className="md:hidden flex items-center h-9 text-white">
+          <div onClick={() => setToggleMobileNavbar(!toggleMobileNavbar)} className="md:hidden flex items-center h-9 text-white cursor-pointer hover:scale-105">
             <FaBarsStaggered size={25} />
           </div>
         </div>
