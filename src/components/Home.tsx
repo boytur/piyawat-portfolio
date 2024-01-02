@@ -16,7 +16,7 @@ function Home() {
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a second-year software engineering student with a passion for Full-Stack development with JavaScript, eager to continue learning and improving my skills.</p>
             </div>
             {/* Social medis */}
-            <div className='w-full h-[3rem] flex items-center mt-2 gap-5 text-white justify-center lg:justify-start'>
+            <div className='w-full h-[3rem] flex items-center mt-2 gap-8 text-white justify-center lg:justify-start'>
               <div className=' w-16 border h-10 justify-center flex items-center rounded-md hover:bg-[#4c49ed46] hover:border-none cursor-pointer'>
                 <a href="https://github.com/boytur" target="_blank"><FaGithub size={30} /></a>
               </div>
@@ -32,7 +32,7 @@ function Home() {
               <Link
                 smooth={true}
                 duration={500}
-                to="about" className='lg:w-2/4 mx-2 lg:mx-0 border h-[60px] rounded-sm text-white flex justify-center items-center cursor-pointer md:hover:scale-105'>
+                to="about" className='lg:w-2/4 mx-2 lg:mx-0 border h-[60px] rounded-md text-white flex justify-center items-center cursor-pointer hover:bg-[#4c49ed46] hover:border-none'>
                 <div><p>View more</p></div>
                 <div>
                   <IoIosArrowRoundDown size={35} />
